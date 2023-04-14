@@ -1,0 +1,50 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container{
+	position: relative;
+	max-width: 850px;
+	margin: 50px auto;
+}
+.container .slider{
+	display: flex;
+	aspect-ratio: 16 / 9;
+	overflow-y: auto;
+	border-radius: 10px;
+	scroll-behavior: smooth;
+	scroll-snap-type: x mandatory;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	scrollbar-width: none; /* hide scrollbar Firefox*/
+	-ms-overflow-style: none; /* hide scrollbar for IE & edge */
+}
+
+/* hide scrollbar for Chrome & safari & opera */
+.container .slider::-webkit-scrollbar{
+	display: none;
+}
+.container .slider img{
+	flex: 1 0 100%;
+	object-fit: cover;
+	scroll-snap-align: start;
+}
+.slider-nav{
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	display: flex;
+	gap: 10px;
+	transform: translateX(-50%);
+	z-index: 1;
+}
+.slider-nav a{
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	background-color: #a5a5a5;
+	transition: .2s ease;
+}
+.slider-nav a:hover{
+	background-color: #fff;
+}
